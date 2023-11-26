@@ -1,0 +1,23 @@
+<!-- In dnd.component.html -->
+<div class="drop-zone" [class.valid-file]="fileValid" (drop)="onDrop($event)" (dragover)="onDragOver($event)"
+    (dragleave)="onDragLeave($event)">
+    Ziehen Sie Ihre Dateien hierher oder klicken Sie, um Dateien auszuwählen.
+    <input type="file" style="display: none;" (change)="onFileSelected($event)" accept=".png,.jpg" />
+</div>
+
+<div *ngIf="fileValid !== null">
+    <p [class.valid]="fileValid" [class.invalid]="!fileValid">
+        {{ fileValid ? 'Gültige Datei' : 'Ungültige Datei' }}
+    </p>
+</div>
+
+<button *ngIf="fileValid && fileUploaded" (click)="sendFileToBackend()">An Backend senden</button>
+
+<div *ngIf="backendResponse" class="response">
+    Antwort vom Backend: {{ backendResponse.result }}
+</div>
+
+
+<audio #audioPlayer controls>
+    Your browser does not support the audio element.
+</audio>

@@ -1,0 +1,37 @@
+/* In dnd.component.css */
+.drop-zone {
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  color: #999;
+  cursor: pointer;
+  margin: 20px;
+  height: 300px; /* Größe anpassen */
+}
+.drop-zone:hover,
+.drop-zone.dragover {
+  border-color: #000;
+  color: #000;
+}
+
+.valid-file {
+  background-color: lightgreen;
+}
+
+/* In dnd.component.css */
+.valid {
+  color: green;
+}
+
+.invalid {
+  color: red;
+}
+
+.response {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
